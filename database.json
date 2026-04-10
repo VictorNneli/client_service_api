@@ -1,13 +1,13 @@
 {
-    "clients":[
-        {
-           
-
-        }
-    ],
-    "records":[
-        {
-
-        }
-    ]
+  "clients": [
+    {
+      "id": 1,
+      "email": "dera@gmail.com",
+      "password": "$2b$10$2wwWp1utApaJdT0XV3Diz.7CDw.f7JcGnEGbY895fHetlkpTiFJJ2",
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc1NzQ3MzAwLCJleHAiOjE3NzYzNTIxMDB9.4wcdRXyK6l5iJg21UvG351Ob4hRA98opH8kn6un-LvE"
+    }
+  ],
+  "records": [
+    {}
+  ]
 }

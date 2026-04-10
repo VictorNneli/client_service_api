@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authController');
 const validate = require('../middleware/validate');
-const { loginSchema, refreshTokenSchema } = require('../middleware/validate');
+const { loginSchema, refreshTokenSchema } = require('../middleware/schemas');
 
 /**
  * @swagger
