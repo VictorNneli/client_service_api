@@ -1,13 +1,65 @@
 {
-  "clients": [
+  "client": [
     {
       "id": 1,
       "email": "dera@gmail.com",
       "password": "$2b$10$2wwWp1utApaJdT0XV3Diz.7CDw.f7JcGnEGbY895fHetlkpTiFJJ2",
-      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc1NzQ3MzAwLCJleHAiOjE3NzYzNTIxMDB9.4wcdRXyK6l5iJg21UvG351Ob4hRA98opH8kn6un-LvE"
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc2NDE4MzU4LCJleHAiOjE3NzcwMjMxNTh9.I6R2WFDhb8XQKpTn8ZrIOa36mW-Mm4-YE0ZVApyRyX4"
+    },
+    {
+      "id": 4,
+      "email": "jay@gmail.com",
+      "password": "$2b$10$VRGhIGigaE81n0RBgBxojOwcH2iEeGNojpzLPGBAluxCsCU.nPynC",
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzc2NDIwMjgzLCJleHAiOjE3NzcwMjUwODN9.U10u3fst0tGCustpbek-F4z7Js7bOLY0amuV5hcFNhk"
+    },
+    {
+      "id": 3,
+      "email": "victor@gmail.com",
+      "password": "$2b$10$r6512o3WUScJOzXHDKpLfevMtMl.jmq3SMNUfJ0wgnl5UpU2txqL2",
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzc2NDIwNTE3LCJleHAiOjE3NzcwMjUzMTd9.9aGcA2j7GHTCapz7rUOV2U1T9fPLQe8Tls3hysPOLWE"
+    },
+    {
+      "id": 4,
+      "email": "cash@gmail.com",
+      "password": "$2b$10$20coAt3xBumQmgLS6VAG0eieIkiVRYfl6.l1INWwUHT2zu5AvUltC",
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzc2NDIwNTk0LCJleHAiOjE3NzcwMjUzOTR9.nAdGUGWzkucWEDKdqUBxu8J0-6LP2S4WHgbU1T7jHPE"
     }
   ],
   "records": [
-    {}
+    {
+      "id": 7,
+      "email": "dera@gmail.com",
+      "description": "Is in Human resource department",
+      "title": "Employee's records",
+      "clientId": 1
+    },
+    {
+      "id": 2,
+      "email": "dera@gmail.com",
+      "description": "Is in Accounts department",
+      "title": "Employee's records",
+      "clientId": 1
+    },
+    {
+      "id": 3,
+      "email": "jay@gmail.com",
+      "description": "Is in works department",
+      "title": "Employee's records",
+      "clientId": 4
+    },
+    {
+      "id": 4,
+      "email": "jay@gmail.com",
+      "description": "Is in security department",
+      "title": "Employee's records",
+      "clientId": 4
+    },
+    {
+      "id": 5,
+      "email": "cash@gmail.com",
+      "description": "Is in security department",
+      "title": "Employee's records",
+      "clientId": 4
+    }
   ]
 }

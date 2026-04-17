@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-
+const { loginSchema, refreshTokenSchema, registerSchema } = require('../middleware/schemas');
 const dbPath = path.join(__dirname, '../database.json');
 const readDB = () => JSON.parse(fs.readFileSync(dbPath, 'utf8'));
 const writeDB = (data) => fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
@@ -11,7 +11,7 @@ exports.login = async(req, res, next) => {
     try{
         const { email, password } = req.body;
         const db = readDB();
-        const client = db.clients.find(c => c.email === email);
+        const client = db.client.find(c => c.email === email);
 
         if (!client) {
             return res.status(401).json({
@@ -56,6 +56,45 @@ exports.login = async(req, res, next) => {
         next(error);
     }
     
+};
+exports.register = async (req, res, next) => {
+    try {
+        const { name, email, password } = req.body;
+        const db = readDB();
+
+        // Check if email already exists
+        const existing = db.client.find(c => c.email === email);
+        if (existing) {
+            return res.status(409).json({
+                success: false,
+                message: 'Email already registered'
+            });
+        }
+
+        // Hash the password
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        // Create new client object
+        const newClient = {
+            id: db.client.length + 1,
+            name,
+            email,
+            password: hashedPassword,
+            refreshToken: null
+        };
+
+        // Save to DB
+        db.client.push(newClient);
+        writeDB(db);
+
+        return res.status(201).json({
+            success: true,
+            message: 'Registration successful',
+            clientId: newClient.id
+        });
+    } catch (error) {
+        next(error);
+    }
 };
 exports.refreshToken = (req, res) => {
     try {

@@ -34,15 +34,16 @@ exports.getRecordById = (req, res, next) => {
 
 exports.createRecord = async(req, res, next) => {
     try {
-        const db = readDB();    
-        const { email, password, name } = req.body;
-        const hashedPassword = await bycrypt.hash(password, 10);
+       
+        const db = readDB();   
+        const { id, email } = req.user;
+        const { title, description } = req.body;
         const newRecords = {
-            id: db.records.length + 1, password: hashedPassword, email, name
+            id: db.records.length + 1, email, description, title, clientId: id
         };
-        db.records.push(newRecord);
+        db.records.push(newRecords);
         writeDB(db);
-        sendResponse(res, 201, 'record created successfully', {id: newRecord.id, email: newRecord.email, name});
+        sendResponse(res, 201, 'record created successfully', {id: newRecords.id, title, description});
     } catch (error) {
         next(error);
     }

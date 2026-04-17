@@ -1,6 +1,7 @@
-exports.sendResponse = (res, statusCode, data) => {
+exports.sendResponse = (res, statusCode, message, data = null) => {
     res.status(statusCode).json({
-        status: 'success',
+        status:statusCode,
+        message,
         data
     });
 };
